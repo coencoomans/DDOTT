@@ -1,0 +1,609 @@
+@charset "UTF-8";
+/* Body */
+body {
+	font-family: "Myriad Pro", "Gill Sans", "Gill Sans MT", "DejaVu Sans Condensed", "Helvetica", "Arial", "sans-serif";
+	line-height: 25px;
+	font-size: 120%;
+	background-color: #FFFFFF;
+	margin: 0;
+}
+/* Container */
+/* Add a background color and some padding around the form */
+
+.container {
+	width: auto;
+	margin-left: 15%;
+	margin-right: 15%;
+	background-color: #FFFFFF;	
+	border-radius: 5px;
+
+}
+
+
+
+.container2 {
+    width: 100%;
+    margin: auto;
+	
+}
+	
+.container2 img {
+   max-width:100%; 
+  max-height:100%;
+  margin:auto;
+  display:block;
+	
+}
+
+.container3 {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FFFFFF;	
+}
+/* Header */
+#header {
+	width: 100%;
+	height: 8%;
+	background-color: #FFFFFF;
+}
+
+/* Menu */
+
+
+		ul {
+    bottom: 0;
+    width: 100%;
+}
+
+
+ul {
+    list-style-type: circle;
+    margin: 0;
+    padding: 10px 10px;
+  overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+	padding: 10px 30px;
+}
+
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #4F81BC;
+}
+	
+
+	li a.active {
+    background-color: #333;
+    color: white;
+}
+
+
+li a.onderzoeksteam {
+    background-color: #333;
+    color: white;
+}
+
+ .onderzoeksteam:hover {
+	background-color: #BB0102 !important;
+color: white;}
+
+li a.contact {
+    background-color: #333;
+    color: white;
+}
+
+ .contact:hover{
+	background-color: #4F81BC !important;
+color: white;}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: #4F81BC;
+color: white;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+	
+	li a.training {background-color: #7ec8ef}
+
+/*_______________________________________________ */
+
+
+
+.logo {
+	color: #fff;
+	font-weight: bold;
+	margin-left: auto;
+	letter-spacing: 4px;
+	margin-right: auto;
+	text-align: center;
+	padding-top: 15px;
+	line-height: 2em;
+	font-size: 22px;
+}
+/*.hero_header {
+	color: #FFFFFF;
+	text-align: center;
+	margin: 0;
+	letter-spacing: 4px;
+}*/
+/* About Section */
+/*.text_column {
+	width: 90%;
+	text-align: left;
+	font-weight: lighter;
+	line-height: 25px;
+	float: left;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #A3A3A3;
+}*/
+.gallery {
+	clear: both;
+	display: inline-block;
+	width: 100%;
+	background-color: #FFFFFF;
+	/* [disabled]min-width: 400px;
+*/
+	padding-bottom: 5px;
+	padding-top: 0px;
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+
+
+.thumbnail {
+	width: 30%;
+	float: left;
+	margin-top: 11px;
+	background-color: #F8F8F8;
+	padding-bottom: 20px;
+	margin-left: 1%;
+	margin-right: 1%;
+	border-radius: 3px;
+	padding-top: 20px;
+	border-bottom: px solid #6DC7D0;
+}
+.gallery .thumbnail h4 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	color: #000000;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.gallery .thumbnail p {
+	margin: 0;
+	color: #B3B3B3;
+	text-align: center;
+	padding-left: 20px;
+}
+/* More info */
+/*.intro {
+	background-color: #FFFFFF;
+	padding-bottom: 35px;
+}*/
+.column {
+	width: 50%;
+	text-align: center;
+	padding-top: 30px;
+	float: left;
+}
+
+
+.column2 {
+	width: 70%;
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	float: left;
+}
+
+.column3 {
+	width: 30%;
+	text-align: right;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: right;
+}
+
+.column4 {
+	width: 20%;
+	text-align: left;
+	float: left;
+	text-transform: lowercase;
+	font-weight: lighter;
+	letter-spacing: 2px;
+	border-top-width: 2px;
+	margin-left: 20px;
+}
+
+/*
+
+.intro .column h3 {
+	color: #FFFFFF;
+	text-align: center;
+}
+.intro .column p {
+	color: #FFFFFF;
+}
+.cards {
+	width: 100%;
+	height: auto;
+	max-width: 400px;
+	max-height: 200px;
+	opacity: 0.8;
+}*/
+/*.intro .column p {
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: justify;
+	line-height: 25px;
+	font-weight: lighter;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 80%;
+	margin-top: 4%;
+}*/
+.button {
+	width: 200px;
+	margin-top: 40px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	padding-top: 20px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+	padding-left: 10px;
+	vertical-align: middle;
+	border-radius: 0px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+	border: 3px solid #FFFFFF;
+	color: #FFFFFF;
+	transition: all 0.3s linear;
+}
+.button:hover {
+	background-color: #6DC7D0;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+.copyright {
+    text-align: right;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #333;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    border-top-width: 2px;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+.privacy {
+	text-align: left;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background-color: #333;
+	color: #FFFFFF;
+	text-transform: lowercase;
+	letter-spacing: 2px;
+	border-top-width: 2px;
+}
+
+.footer {
+    text-align: center;
+    font-weight: lighter;
+    font-style: italic;
+    background-color: #FFFFFF;
+    padding-top: 20px;
+    padding-bottom: 1px;
+    width: 100%;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+
+
+/*.intro {
+	display: inline-block;
+	background-color: #6DC7D0;
+}
+.profile {
+	width: 50%;
+}*/
+.gallery .thumbnail .tag {
+	color: #5D5E5D;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* Mobile */
+@media (max-width : 978.400px ){
+
+	
+			ul {
+    bottom: 0;
+    width: 100%;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+	
+	#wrapper {
+    width: 100%;
+    overflow: hidden;
+	
+}
+#container2 {
+    width: 60%;
+    margin: auto;
+	
+}
+	
+	
+	
+.column2 {
+	width: 80%;
+	text-align: justify-all;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    word-break: keep-all;
+	float: left;
+}
+
+.column3 {
+	width: 20%;
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+}
+
+.column3 img {
+	width: 100%;
+	height: auto;
+    margin: auto;
+
+}
+
+
+	
+/*	
+	
+.banner-img {
+    display: block;
+	margin: auto;
+	width: 40%
+}*/
+
+
+	gallery2 {
+	clear: both;
+	display: inline-block;
+	width: 100%;
+	background-color: #FFFFFF;
+	/* [disabled]min-width: 400px;
+*/
+	padding-bottom: 35px;
+	padding-top: 0px;
+	margin-top: -5px;
+	margin-bottom: 5px;
+}
+	
+.logo {
+	width: 100%;
+	text-align: center;
+	margin-top: 13px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+/*.text_column {
+	width: 100%;
+	text-align: justify;
+	padding: 0;
+}
+.intro .column p {
+	width: 80%;
+	margin-left: 0px;
+}
+.text_column {
+	padding-left: 20px;
+}*/
+.thumbnail {
+	width: 100%;
+}
+.column {
+	width: 100%;
+	margin-top: 0px;
+}
+/*.hero_header {
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height: 22px;
+	text-align: center;
+}*/
+	
+	
+}
+
+/* Small Tablets */
+@media (min-width: 321px)and (max-width: 767px) {
+
+
+	
+#container2 {
+    width: 100%;
+    margin: auto;
+	
+}
+	
+	
+#container2 img {
+       display: block;
+	margin: auto;
+	width: 60%
+	
+}
+
+	gallery {
+	clear: both;
+	display: inline-block;
+	width: 100%;
+	background-color: #FFFFFF;
+	/* [disabled]min-width: 400px;
+*/
+	padding-bottom: 35px;
+	padding-top: 0px;
+	margin-top: -5px;
+	margin-bottom: 5px;
+}
+	
+	.logo {
+	width: 100%;
+	text-align: center;
+	margin-top: 13px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.text_column {
+	width: 100%;
+	text-align: left;
+	padding: 0;
+}
+.thumbnail {
+	width: 100%;
+}
+.column {
+	width: 100%;
+	margin-top: 0px;
+}
+
+.text_column {
+	padding-left: 20px;
+	padding-right: 20px;
+	width: 90%;
+}
+.column {
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+/*.profile {
+	width: 100%;
+}
+.intro .column p {
+	width: 90%;
+	text-align: center;
+	padding-left: 0px;
+}*/
+	
+}
+
+/* Small Desktops */
+@media (min-width: 768px) and (max-width: 1096px) {
+.text_column {
+	width: 100%;
+}
+.thumbnail {
+	width: 48%;
+}
+.text_column {
+	width: 90%;
+	margin: 0;
+	padding: 20px;
+}
+.intro .column p {
+	width: 80%;
+}
+}
+
+
+/* Style inputs with type="tel", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style inputs with type="tel", select elements and textareas */
+input[type=email], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=tel], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
