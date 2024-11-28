@@ -61,7 +61,7 @@ ul {
     list-style-type: circle;
     margin: 0;
     padding: 10px 10px;
-  overflow: hidden;
+  overflow: auto;
     background-color: #333;
 }
 
@@ -366,8 +366,8 @@ color: white;}
 	
 	#wrapper {
     width: 100%;
-    overflow: hidden;
-	
+    overflow: auto;
+		
 }
 #container2 {
     width: 60%;
