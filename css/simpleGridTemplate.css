@@ -22,7 +22,6 @@ body {
 
 .container div {
             display: block;
-            width: 100%; /* Full width */
             padding: 10px;
         }
 
