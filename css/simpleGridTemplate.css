@@ -17,7 +17,7 @@ body {
 	background-color: #FFFFFF;	
 	border-radius: 5px;
 	gap: 20px;
-	/*flex-direction: column; */ Stack elements vertically */
+	/*flex-direction: column;  Stack elements vertically */
 }
 
 .container div {
