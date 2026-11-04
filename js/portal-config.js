@@ -7,10 +7,10 @@
  */
 window.DDOTT_PORTAAL = {
   // Project URL, bijvoorbeeld 'https://abcdefghijkl.supabase.co'
-  supabaseUrl: 'https://JOUW-PROJECT.supabase.co',
+  supabaseUrl: 'https://wnhtjmzqwvinpgvlxxxl.supabase.co/rest/v1/',
 
   // Publishable key (begint met 'sb_publishable_') of de oude 'anon public' key
-  supabaseKey: 'JOUW-PUBLISHABLE-KEY',
+  supabaseKey: 'sb_publishable_4PdoyCgeeGdjn1qNzgcBVg_1I_WTiwf',
 
   // Het gedeelde account voor onderzoekers. Het wachtwoord van dit account IS de toegangscode.
   onderzoekerEmail: 'onderzoeker@ddott.nl',
