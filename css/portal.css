@@ -1,0 +1,157 @@
+/* Opmaak voor het Onderzoekersportaal (portal-documenten.html en portal-data.html) */
+
+.portaal {
+  clear: both;
+  max-width: 1100px;
+  margin: 30px auto 40px;
+  padding: 0 10px;
+}
+
+.portaal h1 { margin-bottom: 5px; }
+
+.portaal-intro {
+  color: #444;
+  max-width: 750px;
+}
+
+.portaal-kaart {
+  background: #f8f8f8;
+  border: 1px solid #e3e3e3;
+  border-radius: 6px;
+  padding: 20px 25px;
+  margin: 25px 0;
+}
+
+.portaal-kaart h2 { margin-top: 0; }
+
+#portaal-login { max-width: 480px; }
+
+.portaal label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.portaal .hulptekst {
+  font-weight: normal;
+  color: #777;
+}
+
+/* Wachtwoord- en bestandsvelden krijgen dezelfde stijl als de bestaande tekstvelden */
+.portaal input[type=password],
+.portaal input[type=file] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  background: #fff;
+  font-size: 1em;
+}
+
+.portaal-knop {
+  background-color: #4F81BC;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 9px 16px;
+  font-size: 0.9em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.portaal-knop:hover { background-color: #3d6aa0; }
+.portaal-knop:disabled { background-color: #9db5d3; cursor: wait; }
+
+.portaal-knop-gevaar { background-color: #fff; color: #BB0102; border: 1px solid #BB0102; }
+.portaal-knop-gevaar:hover { background-color: #BB0102; color: #fff; }
+
+.portaal-knop-link {
+  background: none;
+  border: none;
+  color: #4F81BC;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0;
+}
+
+.portaal-melding { margin: 8px 0 0; min-height: 1em; }
+.portaal-melding-fout { color: #BB0102; }
+.portaal-melding-succes { color: #2e7d32; }
+
+.beheerder-login {
+  margin-top: 20px;
+  border-top: 1px solid #e3e3e3;
+  padding-top: 12px;
+  font-size: 0.9em;
+}
+
+.beheerder-login summary { cursor: pointer; color: #666; }
+.beheerder-login form { margin-top: 12px; }
+
+.portaal-statusbalk {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: #f4f4f4;
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Tabel */
+.portaal-tabel {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92em;
+  line-height: 1.45;
+}
+
+.portaal-tabel th {
+  text-align: left;
+  background: #333;
+  color: #fff;
+  padding: 10px 12px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+.portaal-tabel td {
+  padding: 12px;
+  border-bottom: 1px solid #e3e3e3;
+  vertical-align: top;
+}
+
+.portaal-tabel tbody tr:hover { background: #f9fbfe; }
+
+.portaal-acties { white-space: nowrap; }
+.portaal-acties .portaal-knop + .portaal-knop { margin-left: 6px; }
+
+.portaal-leeg {
+  color: #777;
+  font-style: italic;
+  padding: 15px 0;
+}
+
+/* Smalle schermen: tabelrijen worden 'kaartjes' */
+@media (max-width: 760px) {
+  .portaal-tabel thead { display: none; }
+  .portaal-tabel, .portaal-tabel tbody, .portaal-tabel tr, .portaal-tabel td { display: block; width: 100%; box-sizing: border-box; }
+  .portaal-tabel tr { border: 1px solid #e3e3e3; border-radius: 6px; margin-bottom: 12px; padding: 6px 0; }
+  .portaal-tabel td { border: none; padding: 4px 12px; }
+  .portaal-tabel td[data-label]:not([data-label=""])::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.8em;
+    color: #888;
+  }
+  .portaal-acties { padding-top: 8px !important; }
+}

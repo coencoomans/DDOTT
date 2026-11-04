@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Onderzoekersportaal D-DOTT: documenten voor onderzoekers.">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D-DOTT - Onderzoekersportaal - Documenten</title>
+<link href="css/simpleGridTemplate.css" rel="stylesheet" type="text/css">
+<link href="css/portal.css" rel="stylesheet" type="text/css">
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      background-color: #f4f4f4;
+      overflow: auto;
+    }
+
+    ul li {
+      float: left;
+    }
+
+    ul li a {
+      display: block;
+      color: #000;
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+
+    ul li a:hover {
+      background-color: #ddd;
+    }
+
+    .gallery {
+      margin-bottom: 20px;
+    }
+
+    .gallery img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+    }
+
+    h2, strong {
+      color: #333;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .container1 {
+      text-align: center;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #ddd;
+    }
+
+    .column4 a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .column4 a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body data-categorie="document">
+
+  <!-- Header -->
+  <div>
+    <a href="index.html">
+      <img src="DDOTT_logo.jpg" alt="D-DOTT logo" style="width: 13%; object-fit: contain; float: left;">
+    </a>
+  </div>
+
+  <!-- Navigation -->
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)">Het onderzoek</a>
+      <div class="dropdown-content">
+        <a href="over_het_onderzoek.html">Over het onderzoek</a>
+        <a href="patienten.html">Informatie voor patiënten</a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)">Het onderzoeksteam</a>
+      <div class="dropdown-content">
+        <a href="onderzoekers-amsterdam.html">Amsterdam</a>
+        <a href="onderzoekers-nijmegen.html">Nijmegen</a>
+        <a href="onderzoekers-maastricht.html">Maastricht</a>
+        <a href="onderzoekers-overig.html">Depressie Vereniging</a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)">Onderzoekersportaal</a>
+      <div class="dropdown-content">
+        <a href="portal-documenten.html">Documenten</a>
+        <a href="portal-data.html">Data-overzicht</a>
+      </div>
+    </li>
+    <li><a href="contact2.html">Contact</a></li>
+  </ul>
+
+
+<!-- Main Content -->
+<main class="portaal">
+  <h1>Documenten</h1>
+  <p class="portaal-intro">Hier vindt u documenten voor onderzoekers binnen de D-DOTT studie, zoals analyseplannen en protocollen.</p>
+
+  <p id="portaal-laden" class="portaal-leeg">Bezig met laden…</p>
+
+  <p id="portaal-config-fout" class="portaal-melding portaal-melding-fout" hidden>
+    Het onderzoekersportaal is nog niet ingesteld. (Beheerder: vul js/portal-config.js in, zie HANDLEIDING-PORTAAL.md.)
+  </p>
+
+  <!-- Inloggen -->
+  <section id="portaal-login" class="portaal-kaart" hidden>
+    <h2>Toegang voor onderzoekers</h2>
+    <p>Dit deel van de website is bedoeld voor onderzoekers van de D-DOTT studie. Voer de toegangscode in die u van het onderzoeksteam heeft ontvangen.</p>
+    <form id="code-formulier">
+      <label for="toegangscode">Toegangscode</label>
+      <input type="password" id="toegangscode" autocomplete="current-password" required>
+      <button type="submit" class="portaal-knop">Toegang</button>
+      <p id="code-melding" class="portaal-melding" role="alert"></p>
+    </form>
+
+    <details class="beheerder-login">
+      <summary>Inloggen als beheerder</summary>
+      <form id="beheerder-formulier">
+        <label for="beheerder-email">E-mailadres</label>
+        <input type="email" id="beheerder-email" autocomplete="username" required>
+        <label for="beheerder-wachtwoord">Wachtwoord</label>
+        <input type="password" id="beheerder-wachtwoord" autocomplete="current-password" required>
+        <button type="submit" class="portaal-knop">Inloggen</button>
+        <p id="beheerder-melding" class="portaal-melding" role="alert"></p>
+      </form>
+    </details>
+  </section>
+
+  <!-- Inhoud (alleen na inloggen) -->
+  <section id="portaal-inhoud" hidden>
+    <div class="portaal-statusbalk">
+      <span id="portaal-status-tekst"></span>
+      <button type="button" id="uitlog-knop" class="portaal-knop-link">Uitloggen</button>
+    </div>
+
+    <p id="lijst-melding" class="portaal-melding" role="alert"></p>
+
+    <table id="documenten-tabel" class="portaal-tabel" hidden>
+      <thead>
+        <tr><th>Titel</th><th>Auteurs</th><th>Beschrijving</th><th>Datum</th><th></th></tr>
+      </thead>
+      <tbody id="documenten-lijst"></tbody>
+    </table>
+    <p id="geen-documenten" class="portaal-leeg" hidden>Er zijn nog geen bestanden geüpload.</p>
+
+    <!-- Uploaden (alleen beheerders) -->
+    <section id="upload-sectie" class="portaal-kaart" hidden>
+      <h2>Document toevoegen</h2>
+      <p class="portaal-intro">Alleen zichtbaar voor beheerders. Het document verschijnt direct in de tabel hierboven.</p>
+      <form id="upload-formulier">
+        <label for="upload-bestand">Bestand</label>
+        <input type="file" id="upload-bestand" required>
+
+        <label for="upload-titel">Titel</label>
+        <input type="text" id="upload-titel" maxlength="200" required>
+
+        <label for="upload-auteurs">Auteurs <span class="hulptekst">(bijv. Coomans C, Dols A, Vriend C)</span></label>
+        <input type="text" id="upload-auteurs" maxlength="500">
+
+        <label for="upload-beschrijving">Korte beschrijving</label>
+        <textarea id="upload-beschrijving" rows="3" maxlength="1000"></textarea>
+
+        <button type="submit" class="portaal-knop">Uploaden</button>
+        <p id="upload-melding" class="portaal-melding" role="alert"></p>
+      </form>
+    </section>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="copyright">
+        &copy;2024 - Coomans &amp; Tolsma
+        <a href="privacy.html" style="color:white;">Privacy</a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/portal-config.js"></script>
+<script src="js/portal.js"></script>
+</body>
+</html>
