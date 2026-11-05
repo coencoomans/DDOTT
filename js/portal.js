@@ -291,7 +291,8 @@
       auteurs: $('upload-auteurs').value.trim(),
       beschrijving: $('upload-beschrijving').value.trim(),
       bestandspad: pad,
-      bestandsnaam: bestand.name
+      bestandsnaam: bestand.name,
+      preregistratie_url: $('upload-link').value.trim() || null
     });
 
     knop.disabled = false;
