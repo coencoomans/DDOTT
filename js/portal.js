@@ -30,7 +30,7 @@
     if (/invalid api key|no api key|secret api key|apikey/i.test(m)) return 'De website kan geen verbinding maken met Supabase: de sleutel in js/portal-config.js klopt niet. (Melding: ' + m + ')';
     if (/failed to fetch|network|load failed/i.test(m)) return 'Geen verbinding met Supabase. Controleer de Project URL in js/portal-config.js, en of het project niet gepauzeerd is. (Melding: ' + m + ')';
     if (/logins are disabled|provider is not enabled/i.test(m)) return 'Inloggen met e-mail staat uit in Supabase (Authentication → Providers → Email).';
-    return 'Inloggen mislukt. Technische melding: ' + (m || 'onbekend');
+    return 'Inloggen mislukt. Technische melding: ' + (m || 'onbekend') + ' (gebruikt adres: ' + supabaseAdres + ')';
   }
 
   function toon(el, zichtbaar) { if (el) el.hidden = !zichtbaar; }
@@ -42,7 +42,14 @@
     return;
   }
 
-  var sb = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseKey);
+  // Alleen het basisadres gebruiken (https://xxxx.supabase.co), ook als er per ongeluk
+  // een pad (/rest/v1/ e.d.), spatie of slash achter de URL staat.
+  var supabaseAdres;
+  try { supabaseAdres = new URL(String(cfg.supabaseUrl).trim()).origin; }
+  catch (e) { supabaseAdres = String(cfg.supabaseUrl).trim(); }
+  var supabaseSleutel = String(cfg.supabaseKey).trim();
+
+  var sb = window.supabase.createClient(supabaseAdres, supabaseSleutel);
   var isBeheerder = false;
   var huidigeGebruiker = null;
 
