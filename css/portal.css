@@ -40,6 +40,7 @@
 
 /* Wachtwoord- en bestandsvelden krijgen dezelfde stijl als de bestaande tekstvelden */
 .portaal input[type=password],
+.portaal input[type=url],
 .portaal input[type=file] {
   width: 100%;
   padding: 12px;
@@ -154,4 +155,11 @@
     color: #888;
   }
   .portaal-acties { padding-top: 8px !important; }
+}
+
+
+/* Link naar preregistratie onder de titel */
+.portaal-prereg-link {
+  font-size: 0.85em;
+  color: #4F81BC;
 }
