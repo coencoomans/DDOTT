@@ -181,6 +181,18 @@
       var titel = document.createElement('strong');
       titel.textContent = doc.titel;
       titelCel.appendChild(titel);
+      if (doc.preregistratie_url && /^https?:\/\//i.test(doc.preregistratie_url)) {
+        var link = document.createElement('a');
+        link.href = doc.preregistratie_url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.className = 'portaal-prereg-link';
+        var site = '';
+        try { site = new URL(doc.preregistratie_url).hostname.replace(/^www\./, ''); } catch (e) {}
+        link.textContent = 'Preregistratie' + (site ? ' (' + site + ')' : '') + ' ↗';
+        titelCel.appendChild(document.createElement('br'));
+        titelCel.appendChild(link);
+      }
       tr.appendChild(titelCel);
 
       tr.appendChild(cel(doc.auteurs, 'Auteurs'));
