@@ -7,7 +7,7 @@
  */
 window.DDOTT_PORTAAL = {
   // Project URL, bijvoorbeeld 'https://abcdefghijkl.supabase.co'
-  supabaseUrl: 'https://wnhtjmzqwvinpgvlxxxl.supabase.co/rest/v1/',
+  supabaseUrl: 'https://wnhtjmzqwvinpgvlxxxl.supabase.co',
 
   // Publishable key (begint met 'sb_publishable_') of de oude 'anon public' key
   supabaseKey: 'sb_publishable_4PdoyCgeeGdjn1qNzgcBVg_1I_WTiwf',
