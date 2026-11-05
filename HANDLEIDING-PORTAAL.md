@@ -12,7 +12,6 @@ New files in the website:
 | File | What it is |
 |---|---|
 | `portal-documenten.html` | Documents page |
-| `portal-data.html` | Data overview page (same system, separate list) |
 | `css/portal.css` | Styling for the portal |
 | `js/portal.js` | Login, table, upload, download, delete |
 | `js/portal-config.js` | **The only file you fill in** (step 4) |
@@ -102,7 +101,7 @@ where user_id = (select id from auth.users where email = 'onderzoeker@ddott.nl')
 
 **Add / remove admins:** see the bottom of `supabase/setup.sql`.
 
-**Change texts on the pages:** edit `portal-documenten.html` / `portal-data.html` like any other page.
+**Change texts on the pages:** edit `portal-documenten.html` like any other page. To add a second portal page later, add a link under *Onderzoekersportaal* in the menu of every page.
 
 ## Good to know
 

@@ -112,7 +112,6 @@
       <a href="javascript:void(0)">Onderzoekersportaal</a>
       <div class="dropdown-content">
         <a href="portal-documenten.html">Documenten</a>
-        <a href="portal-data.html">Data-overzicht</a>
       </div>
     </li>
     <li><a href="contact2.html">Contact</a></li>
@@ -122,7 +121,7 @@
 <!-- Main Content -->
 <main class="portaal">
   <h1>Documenten</h1>
-  <p class="portaal-intro">Hier vindt u documenten voor onderzoekers binnen de D-DOTT studie, zoals analyseplannen en protocollen.</p>
+  <p class="portaal-intro">Hier vindt u documenten voor onderzoekers binnen de D-DOTT studie, zoals analyseplannen en protocollen. De documenten staan op volgorde van datum van preregistratie.</p>
 
   <p id="portaal-laden" class="portaal-leeg">Bezig met laden…</p>
 
@@ -179,8 +178,11 @@
         <label for="upload-bestand">Bestand</label>
         <input type="file" id="upload-bestand" required>
 
-        <label for="upload-titel">Titel</label>
-        <input type="text" id="upload-titel" maxlength="200" required>
+        <label for="upload-titel">Titel <span class="hulptekst">(begin altijd met jaar en maand van preregistratie: JJJJMM)</span></label>
+        <input type="text" id="upload-titel" maxlength="200" required
+               placeholder="202611 Analyseplan primaire uitkomst"
+               pattern="20[0-9]{2}(0[1-9]|1[0-2]) .+"
+               title="Begin de titel met jaar en maand van preregistratie (JJJJMM), dan een spatie en de titel. Bijvoorbeeld: 202611 Analyseplan primaire uitkomst">
 
         <label for="upload-auteurs">Auteurs <span class="hulptekst">(bijv. Coomans C, Dols A, Vriend C)</span></label>
         <input type="text" id="upload-auteurs" maxlength="500">

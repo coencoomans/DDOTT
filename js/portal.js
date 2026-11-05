@@ -161,7 +161,7 @@
     var res = await sb.from('documenten')
       .select('*')
       .eq('categorie', categorie)
-      .order('geupload_op', { ascending: false });
+      .order('titel', { ascending: true });
 
     lijst.innerHTML = '';
 
