@@ -21,6 +21,18 @@
     el.className = 'portaal-melding' + (soort ? ' portaal-melding-' + soort : '');
   }
 
+  // Geeft een begrijpelijke melding bij een mislukte login, met de echte oorzaak erbij.
+  function loginFout(err, standaardTekst) {
+    var m = (err && err.message) || '';
+    console.error('Supabase login fout:', err);
+    if (/invalid login credentials/i.test(m)) return standaardTekst;
+    if (/email not confirmed/i.test(m)) return 'Dit account is nog niet bevestigd. (Beheerder: zet in Supabase "Auto Confirm" aan of bevestig de gebruiker.)';
+    if (/invalid api key|no api key|secret api key|apikey/i.test(m)) return 'De website kan geen verbinding maken met Supabase: de sleutel in js/portal-config.js klopt niet. (Melding: ' + m + ')';
+    if (/failed to fetch|network|load failed/i.test(m)) return 'Geen verbinding met Supabase. Controleer de Project URL in js/portal-config.js, en of het project niet gepauzeerd is. (Melding: ' + m + ')';
+    if (/logins are disabled|provider is not enabled/i.test(m)) return 'Inloggen met e-mail staat uit in Supabase (Authentication → Providers → Email).';
+    return 'Inloggen mislukt. Technische melding: ' + (m || 'onbekend');
+  }
+
   function toon(el, zichtbaar) { if (el) el.hidden = !zichtbaar; }
 
   // --- Controle: is het portaal ingesteld? ---------------------------------
@@ -89,7 +101,7 @@
 
     knop.disabled = false;
     if (res.error) {
-      melding($('code-melding'), 'Deze code is niet juist. Controleer de code en probeer het opnieuw.', 'fout');
+      melding($('code-melding'), loginFout(res.error, 'Deze code is niet juist. Controleer de code en probeer het opnieuw.'), 'fout');
     } else {
       veld.value = '';
     }
@@ -109,7 +121,7 @@
 
     knop.disabled = false;
     if (res.error) {
-      melding($('beheerder-melding'), 'Inloggen mislukt. Controleer e-mailadres en wachtwoord.', 'fout');
+      melding($('beheerder-melding'), loginFout(res.error, 'Inloggen mislukt. Controleer e-mailadres en wachtwoord.'), 'fout');
     } else {
       $('beheerder-wachtwoord').value = '';
     }
